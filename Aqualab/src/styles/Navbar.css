@@ -1,0 +1,61 @@
+.navbar{
+    position:static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0px 5px 0px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    width: 100%;
+}
+
+.aqualab-logo{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    font-size: 0.75rem;
+    color: #11969e;
+}
+
+.navbar-list{
+    color: #595d63;
+    font-size: 1.2rem;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.navbar-links{
+    text-decoration: none;
+    color: #595d63;
+}
+
+.navbar-buttons{
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.navbar-butt1{
+    border-radius: 30px;
+    color: white;
+    background-color: #0790b3;
+} 
+
+.navbar-butt2{
+    border-radius: 30px;
+    background-color: #ee4816ec;
+    color: white;
+    padding: 5;
+}
+.navbar-butt1, .navbar-butt2: :hover{
+    
+}
