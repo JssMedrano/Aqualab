@@ -63,7 +63,6 @@ function Home() {
               time="1 min"
               icon="https://media.istockphoto.com/id/1049079380/pt/vetorial/bookmark-icon-vector.jpg?s=612x612&w=0&k=20&c=CWp0zWMSl0VuSWoscK4Q7ybj1SZCrtND5Thq7dCGABM="
             />
-
             <CardVideo
               videoSrc={Ciclo}
               title="O ciclo da água"
@@ -71,7 +70,6 @@ function Home() {
               time="3 min"
               icon="https://media.istockphoto.com/id/1049079380/pt/vetorial/bookmark-icon-vector.jpg?s=612x612&w=0&k=20&c=CWp0zWMSl0VuSWoscK4Q7ybj1SZCrtND5Thq7dCGABM="
             />
-
             <CardVideo
               videoSrc={Economizar}
               title="Dicas para economizar água"
@@ -89,7 +87,6 @@ function Home() {
           <h1>Funcionalidades</h1>
           <p>Tudo o que voce precisa para ensinar e aprender sobre a água.</p>
         </div>
-
         <div className="funcionalidades-section">
           <div className="funcionalidades-professores">
             <h2 className="funcionalidades-tittle-professores">
