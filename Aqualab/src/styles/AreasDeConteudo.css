@@ -1,0 +1,37 @@
+.areas-de-conteudo-section {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    border: solid 2px #12c7e3;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.area-de-conteudo-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+
+}
+
+.area-de-conteudo-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.area-de-conteudo-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.link-section {
+    text-align: left;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #12c7e3;
+    font-weight: bold;
+}

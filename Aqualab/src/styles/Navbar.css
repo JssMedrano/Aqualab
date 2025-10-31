@@ -1,5 +1,5 @@
 .navbar{
-    position:static;
+    position:fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,6 +8,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 70px;
     width: 100%;
+    
 }
 
 .aqualab-logo{
@@ -19,8 +20,9 @@
 .navbar-logo{
     display: flex;
     align-items: center;
-    padding-left: 1rem;
+    padding-left: 2rem;
     font-size: 0.75rem;
+    
     color: #11969e;
 }
 
@@ -41,7 +43,7 @@
 .navbar-buttons{
     display: flex;
     gap: 10px;
-    padding-right: 10px;
+    padding-right: 2rem;
 }
 
 .navbar-butt1{
@@ -56,6 +58,9 @@
     color: white;
     padding: 5;
 }
-.navbar-butt1, .navbar-butt2: :hover{
-    
+.navbar-butt1:hover, .navbar-butt2:hover{
+    opacity: 0.8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
 }
