@@ -1,6 +1,10 @@
 import "../styles/Home.css";
 import AreasDeConteudo from "./AreasDeConteudo";
 import Funcionalidades from "./Funcionalidades";
+import CardVideo from "./CardVideo";
+import Ciclo from "../assets/Ciclo.mp4";
+import Economizar from "../assets/Economizar.mp4";
+import Importancia from "../assets/Importancia.mp4";
 
 
 function Home() {
@@ -43,7 +47,41 @@ function Home() {
         </div>
       </section>
 
-      
+      {/* Videos Educativos */}
+      <section className="videos-educativos-section">
+        <div className="videosEducativos-section">
+          <div className="home-subtittle">
+            <h1>Videos Educativos</h1>
+            <p>Aprenda assistindo conteúdo interativo</p>
+          </div>
+
+          <div className={"card-video-container"}>
+            <CardVideo
+              videoSrc={Importancia}
+              title="A importância da água"
+              description="A água é essencial para toda a vida no planeta. Ela sustenta os ecossistemas, regula o clima e é vital para a saúde humana, a agricultura e a indústria. Sua preservação é urgente."
+              time="1 min"
+              icon="https://media.istockphoto.com/id/1049079380/pt/vetorial/bookmark-icon-vector.jpg?s=612x612&w=0&k=20&c=CWp0zWMSl0VuSWoscK4Q7ybj1SZCrtND5Thq7dCGABM="
+            />
+
+            <CardVideo
+              videoSrc={Ciclo}
+              title="O ciclo da água"
+              description="O ciclo da água é o movimento contínuo da água entre a terra, o mar e a atmosfera, através de evaporação, condensação, precipitação e infiltração. Esse processo natural recicla e purifica a água, garantindo sua disponibilidade para todos os seres vivos."
+              time="3 min"
+              icon="https://media.istockphoto.com/id/1049079380/pt/vetorial/bookmark-icon-vector.jpg?s=612x612&w=0&k=20&c=CWp0zWMSl0VuSWoscK4Q7ybj1SZCrtND5Thq7dCGABM="
+            />
+
+            <CardVideo
+              videoSrc={Economizar}
+              title="Dicas para economizar água"
+              description="Apesar de parecer abundante, a água doce disponível é um recurso limitado e essencial. Economizar água garante sua disponibilidade para as futuras gerações, evita a escassez e reduz os impactos ambientais, preservando os ecossistemas."
+              time="3 min"
+              icon="https://media.istockphoto.com/id/1049079380/pt/vetorial/bookmark-icon-vector.jpg?s=612x612&w=0&k=20&c=CWp0zWMSl0VuSWoscK4Q7ybj1SZCrtND5Thq7dCGABM="
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Funcionalidades */}
       <section className="funcionalidades-section-main">
