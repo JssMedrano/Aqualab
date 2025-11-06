@@ -1,14 +1,48 @@
+import React, { useRef } from 'react';
 import '../styles/AreasDeConteudo.css';
 import { Link } from 'react-router-dom';
 
 
-function AreasDeConteudo({icon, title, description}) {
+function AreasDeConteudo({ icon, title, description, rota }) {
+    const cardRef = useRef(null);
+
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function handleMove(e) {
+        if (prefersReducedMotion) return;
+        const el = cardRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const midX = rect.width / 2;
+        const midY = rect.height / 2;
+        const rotateY = ((x - midX) / midX) * 8; // degrees
+        const rotateX = -((y - midY) / midY) * 8;
+
+        el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        el.style.boxShadow = `${-rotateY * 2}px ${rotateX * 2}px 28px rgba(0,0,0,0.18)`;
+    }
+
+    function handleLeave() {
+        const el = cardRef.current;
+        if (!el) return;
+        el.style.transform = '';
+        el.style.boxShadow = '';
+    }
+
     return (
-        <section className="areas-de-conteudo-section">
+        <section
+            className="card-area-de-conteudo"
+            ref={cardRef}
+            onMouseMove={handleMove}
+            onMouseLeave={handleLeave}
+            aria-label={title}
+        >
             <img className="area-de-conteudo-icon" src={icon} alt={title} />
             <h2 className='area-de-conteudo-title'>{title}</h2>
             <p className='area-de-conteudo-description'>{description}</p>
-            <Link className='link-section' to={`/conteudo/${title}`}>→  Ver Mais</Link>
+            <Link className='link-section' to={rota}> →  Ver Mais</Link>
         </section>
     );
 }

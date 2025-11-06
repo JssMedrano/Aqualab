@@ -1,13 +1,12 @@
 import "../styles/CardVideo.css";
 
-function CardVideo({ videoSrc, title, description, time, icon, teste }) {
+function CardVideo({ videoSrc, title, description, time, icon, thumbnail }) {
   return (
     <>
       <div className="card-video">
         <div>
-          <video className="video-player" controls>
+          <video className="video-player" controls poster={thumbnail} >
             <source src={videoSrc} type="video/mp4" />
-            Seu navegador não suporta a tag de vídeo.
           </video>
           <h3 className="video-title">{title}</h3>
           <p className="video-description">{description}</p>

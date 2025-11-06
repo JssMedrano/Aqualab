@@ -1,12 +1,17 @@
-.areas-de-conteudo-section {
+.card-area-de-conteudo {
     display: flex;
     flex-direction: column;
     margin: 40px 0;
-    border: solid 2px #12c7e3;
+    border: solid 2px rgba(18,199,227,0.95);
     border-radius: 15px;
     padding: 20px;
     text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform 350ms cubic-bezier(.2,.9,.2,1), box-shadow 350ms;
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .area-de-conteudo-icon {
@@ -15,6 +20,8 @@
     margin-bottom: 20px;
     border-radius: 15px;
 
+    transition: transform 400ms cubic-bezier(.2,.9,.2,1);
+    transform: translateZ(0);
 }
 
 .area-de-conteudo-title {
@@ -34,4 +41,48 @@
     text-decoration: none;
     color: #12c7e3;
     font-weight: bold;
+}
+
+/* Card custom background layer so it's distinct from global site background */
+.card-area-de-conteudo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 13px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)), radial-gradient(circle at 10% 20%, rgba(18,199,227,0.06), transparent 18%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    pointer-events: none;
+}
+
+/* Make sure actual content sits above the background layer */
+.card-area-de-conteudo > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Pop-out on hover to enhance 3D illusion */
+.card-area-de-conteudo:hover .area-de-conteudo-icon {
+    transform: translateZ(28px) scale(1.02);
+}
+.card-area-de-conteudo:hover .area-de-conteudo-title {
+    transform: translateZ(18px);
+}
+.card-area-de-conteudo:hover .area-de-conteudo-description {
+    transform: translateZ(12px);
+}
+
+.card-area-de-conteudo .area-de-conteudo-title,
+.card-area-de-conteudo .area-de-conteudo-description,
+.card-area-de-conteudo .link-section {
+    transition: transform 400ms cubic-bezier(.2,.9,.2,1);
+    transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-area-de-conteudo,
+    .card-area-de-conteudo * {
+        transition: none !important;
+        transform: none !important;
+    }
 }

@@ -4,7 +4,7 @@ function Funcionalidades({ icon, title, description }) {
     return (
         <div className="funcionalidades-card">
             <div>
-            <img className="funcionalidades-icon" src={icon} alt    ={title} />
+            <img className="funcionalidades-icon" src={icon} alt ={title} />
             </div>
             <div>
             <h3 className="funcionalidades-title">{title}</h3>
