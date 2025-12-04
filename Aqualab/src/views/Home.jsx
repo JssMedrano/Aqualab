@@ -9,50 +9,17 @@ import Importancia from "../assets/Importancia.mp4";
 function Home() {
   return (
     <header className="home-header">
-      <div className="home-welcome">
+      <div id="home" className="home-welcome">
         <h1 className="tittle-home">Bem-vindo ao </h1>
         <h1 className="tittle-home1">Aqualab</h1>
         <p className="home-hero-sub">
           Explore o mundo da água com nossos conteúdos interativos, vídeos
           educativos e jogos divertidos!
         </p>
-
-        <button
-          className="scroll-down"
-          aria-label="Ir a áreas de conteúdo"
-          onClick={(e) => {
-            e.preventDefault();
-            const target = document.getElementById("area-de-conteudo");
-            const nav = document.querySelector(".navbar");
-            const navHeight = nav ? nav.offsetHeight : 0;
-            if (target) {
-              const top =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                navHeight -
-                8;
-              window.scrollTo({ top, behavior: "smooth" });
-              target.setAttribute("tabindex", "-1");
-              target.focus({ preventScroll: true });
-            }
-          }}
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 2C9 6.5 7 9 7 12a5 5 0 0010 0c0-3-2-5.5-5-10z"
-              fill="#ffffff"
-            />
-          </svg>
-          <span className="scroll-text">Aperte aqui</span>
-        </button>
       </div>
 
       {/* Areas de Conteudo */}
-      <section className="areas-de-conteudo-section">
+      <section className="areas-de-conteudo-section" id="area-conteudo" >
         <div className="home-subtittle">
           <h1 id="area-de-conteudo" className="home-subtittle">
             Areas de Conteudo
@@ -80,7 +47,7 @@ function Home() {
       </section>
 
       {/* Videos Educativos */}
-      <section className="videos-educativos-section">
+      <section id="video-educativo" className="videos-educativos-section">
         <div className="videosEducativos-section">
           <div className="home-subtittle">
             <h1>Videos Educativos</h1>
@@ -114,7 +81,7 @@ function Home() {
       </section>
       
       {/* Funcionalidades */}
-      <section className="funcionalidades-section-main">
+      <section id="funcionalidade" className="funcionalidades-section-main">
         <div className="home-subtittle">
           <h1>Funcionalidades</h1>
           <p>Tudo o que voce precisa para ensinar e aprender sobre a água.</p>
@@ -184,6 +151,7 @@ function Home() {
               description="Teste seus conhecimetos e se aprimore com desafios semanais"
             />
           </div>
+
         </div>
       </section>
     </header>
