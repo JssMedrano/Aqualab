@@ -28,3 +28,7 @@ p{
   color: #595d63;
 }
 
+li a {
+  text-decoration: none;
+  color: #333;
+}

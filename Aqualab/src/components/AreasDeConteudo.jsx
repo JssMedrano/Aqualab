@@ -1,12 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from "react";
 import '../styles/AreasDeConteudo.css';
-import { Link } from 'react-router-dom';
+import LoginSelector from '../components/LoginSelector.jsx';
 
 
 function AreasDeConteudo({ icon, title, description, rota }) {
     const cardRef = useRef(null);
 
     const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const [showModal, setShowModal] = useState(false);
+    const [modalView, setModalView] = useState("selector");
+    const [modalAction, setModalAction] = useState("login");
 
     function handleMove(e) {
         if (prefersReducedMotion) return;
@@ -42,9 +46,21 @@ function AreasDeConteudo({ icon, title, description, rota }) {
             <img className="area-de-conteudo-icon" src={icon} alt={title} />
             <h2 className='area-de-conteudo-title'>{title}</h2>
             <p className='area-de-conteudo-description'>{description}</p>
-            <Link className='link-section' to={rota}> →  Ver Mais</Link>
+            <a className="link-section" onClick={() => { setModalAction('login'); setModalView('selector'); setShowModal(true); }}>
+                →  Ver Mais
+            </a>
+            
+
+            <LoginSelector
+                showModal={showModal}
+                setShowModal={setShowModal}
+                modalView={modalView}
+                setModalView={setModalView}
+                modalAction={modalAction}
+                setModalAction={setModalAction}
+            />
         </section>
-    );
+    );  
 }
 
 export default AreasDeConteudo;

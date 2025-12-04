@@ -1,0 +1,246 @@
+
+
+
+
+
+.auth-buttons button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.auth-buttons button:hover {
+  background-color: #0097a7;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.25s ease;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Modal Header con flecha y X */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 0.25rem;
+  line-height: 0;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #00bcd4;
+  background: rgba(0,188,212,0.08);
+}
+
+.icon-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Título */
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin: 1rem 0 1.5rem;
+  color: #00bcd4;
+  font-weight: 800;
+}
+
+/* Selector de opciones */
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.option {
+  padding: 0px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #00bcd4;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.2s ease;
+}
+
+.option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+  border-color: #00a3b5;
+}
+
+.option img {
+  border-radius: 12px 12px 0 0;
+  width: 180px;
+  height: 180px;
+  /* object-fit: cover; */
+  /* display: block; */
+  border-bottom: 2px solid #00bcd4;
+}
+
+.letras{
+  
+  margin-top: 8px;
+  color: #00796b;
+}
+
+/* Formularios de login/cadastro */
+.login-form,
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.login-form label,
+.cadastro-form label {
+  font-weight: 700;
+  color: #37474f;
+  font-size: 0.95rem;
+}
+
+.login-form input,
+.cadastro-form input {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #263238;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  background: #ffffff;
+}
+
+.login-form input::placeholder,
+.cadastro-form input::placeholder {
+  color: #90a4ae;
+}
+
+.login-form input:focus,
+.cadastro-form input:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 3px rgba(0,188,212,0.18);
+}
+
+/* Botón principal */
+.entrar-btn {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.entrar-btn:hover {
+  background-color: #0097a7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+.entrar-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Enlace inferior */
+.cadastro-link {
+  font-size: 0.95rem;
+  text-align: center;
+  color: #455a64;
+  margin-top: 0.5rem;
+}
+
+.cadastro-link a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.cadastro-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 520px) {
+  .modal-content {
+    width: 94%;
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .options {
+    gap: 1rem;
+  }
+
+  .option {
+    width: 150px;
+    height: 200px;
+  }
+
+  .professor{
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  
+}
